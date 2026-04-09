@@ -68,7 +68,13 @@ export default function Navigation({ isPlaying, onToggleAudio }) {
       direction="up"
       className="flex gap-2 fixed bottom-4 left-1/2 -translate-x-1/2 z-50"
     >
-      <Dock className="rounded-full" direction="middle">
+      <Dock
+        className={cn(
+          "rounded-full",
+          "dark:bg-background transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)]",
+        )}
+        direction="middle"
+      >
         {DATA.navItems.map((item, index) => {
           const Icon = item.icon;
           const isActive = isActiveSection === item.id;
