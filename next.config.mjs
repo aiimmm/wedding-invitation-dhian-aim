@@ -8,6 +8,7 @@ const nextConfig = {
     "localhost",
     "aim-dhian-invitation.vercel.app",
     "dhian-aim-wi-api.aiimmm.net",
+    "wedding.aiimmm.net",
     "aiimmm.net",
   ],
 };
