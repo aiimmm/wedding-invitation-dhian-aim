@@ -18,5 +18,14 @@ pnpm-lock.yaml
 .eslintignore
 .husky
 
-# Media
+# Media & Assets
 public
+**/*.ico
+**/*.jpg
+**/*.jpeg
+**/*.JPEG
+**/*.png
+**/*.webp
+**/*.mp3
+**/*.svg
+**/*.gif

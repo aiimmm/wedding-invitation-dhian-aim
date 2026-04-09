@@ -33,14 +33,15 @@ export default function CoupleSections() {
         <div className="flex flex-col gap-6 mt-12 w-full max-w-4xl justify-center items-center">
           <BlurFade delay={0.3} inView direction="left">
             <div className="flex items-center flex-col sm:flex-row gap-6 sm:gap-12 w-full">
-              <div className="aspect-square sm:size-44 size-40">
+              <div className="relative aspect-square sm:size-44 size-40 border-2 border-primary/50 rounded-full">
                 <Image
                   src={WEDDING_DATA.bride.image}
                   alt={WEDDING_DATA.bride.name}
                   width={200}
                   height={200}
-                  className="rounded-full aspect-square object-cover object-center"
+                  className="rounded-full aspect-square object-cover object-center p-1.5"
                 />
+                <div className="absolute inset-0 bg-black/20" />
               </div>
               <div className="space-y-4">
                 <h4 className="text-3xl sm:text-4xl font-semibold font-caligraphy">
@@ -69,14 +70,15 @@ export default function CoupleSections() {
           </BlurFade>
           <BlurFade delay={0.5} inView direction="right">
             <div className="flex items-center flex-col sm:flex-row-reverse gap-6 sm:gap-12 w-full">
-              <div className="aspect-square sm:size-44 size-40">
+              <div className="relative aspect-square sm:size-44 size-40 border-2 border-primary/50 rounded-full">
                 <Image
                   src={WEDDING_DATA.groom.image}
                   alt={WEDDING_DATA.groom.name}
                   width={200}
                   height={200}
-                  className="rounded-full aspect-square object-cover object-center"
+                  className="rounded-full aspect-square object-cover object-center p-1.5"
                 />
+                <div className="absolute inset-0 bg-black/20" />
               </div>
               <div className="space-y-4">
                 <h4 className="text-3xl sm:text-4xl font-semibold font-caligraphy">
