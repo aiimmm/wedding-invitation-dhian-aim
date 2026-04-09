@@ -1,0 +1,22 @@
+# Dependencies
+node_modules
+
+# Build
+.next
+out
+build
+
+# Lock files
+bun.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Config files tanpa ekstensi
+.prettierignore
+.gitignore
+.eslintignore
+.husky
+
+# Media
+public
