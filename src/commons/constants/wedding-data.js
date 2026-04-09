@@ -1,5 +1,6 @@
 export const WEDDING_DATA = {
-  backgroundImage: "/images/cover_v1.webp",
+  backgroundImage: "/images/cover_v2.webp",
+  weddingMusic: "/music/wedding-music.mp3",
   groom: {
     name: "Aim",
     fullTitle: "Muhammad Rahim, S.Kom.",

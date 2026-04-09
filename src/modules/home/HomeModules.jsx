@@ -1,5 +1,6 @@
 "use client";
 
+import { WEDDING_DATA } from "@/commons/constants/wedding-data";
 import Navigation from "@/components/elements/Navigation";
 import { Suspense, useRef, useState } from "react";
 import ClosingSections from "./ClosingSections";
@@ -49,7 +50,7 @@ export default function HomeModules() {
     <main>
       <audio
         ref={audioRef}
-        src="/music/Calum Scott - You Are The Reason.mp3"
+        src={WEDDING_DATA.weddingMusic}
         loop
         preload="auto"
       />
