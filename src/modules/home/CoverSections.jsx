@@ -1,12 +1,12 @@
 "use client";
 
 import { WEDDING_DATA } from "@/commons/constants/wedding-data";
+import { ParallaxBackground } from "@/components/elements/ParallaxBackground";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Button } from "@/components/ui/button";
 import { useInvitationGuestBySlugQuery } from "@/lib/invitation-guests-api";
 import { formatGuestNameFromToParam } from "@/lib/invitation-link";
 import { MailOpenIcon } from "lucide-react";
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
 export default function CoverSections({ onClick }) {
@@ -25,14 +25,7 @@ export default function CoverSections({ onClick }) {
 
   return (
     <section className="fixed inset-0 z-10 min-h-screen flex items-center justify-center overflow-hidden px-6">
-      <Image
-        src={WEDDING_DATA.backgroundImage}
-        alt="cover"
-        fill
-        className="object-cover object-bottom sm:object-[center_80%] grayscale max-sm:scale-115"
-        priority
-      />
-      <div className="absolute inset-0 bg-black/80" />
+      <ParallaxBackground />
 
       <div className="relative z-20 flex flex-col items-center justify-center text-center">
         <BlurFade delay={0.1} inView direction="up">
