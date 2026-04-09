@@ -55,9 +55,13 @@
     "unrs-resolver"
   ],
   "lint-staged": {
-    "**/*": [
+    "**/*.{js,jsx,ts,tsx,mjs,cjs}": [
       "eslint --fix --no-warn-ignored",
       "prettier --write"
-    ]
+    ],
+    "**/*.{json,css,md}": [
+      "prettier --write"
+    ],
+    "**/*.{ico,jpg,jpeg,png,webp,mp3,svg,gif}": []
   }
 }
