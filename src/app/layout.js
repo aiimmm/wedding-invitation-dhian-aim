@@ -4,9 +4,11 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import { fontCaligraphy, fontMono, fontSans, fontSerif } from "@/styles/fonts";
 import "../styles/globals.css";
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
 export const metadata = {
   // ── DASAR ──────────────────────────────────────────────────
-  metadataBase: new URL("https://dhiiann.aiimmm.net"),
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "Wedding Invitation | Dhian & Aim",
     template: "%s | Wedding Dhian & Aim",
@@ -50,7 +52,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://dhiiann.aiimmm.net",
+    url: BASE_URL,
     siteName: "Pernikahan Dhian & Aim",
     title: "Undangan Pernikahan Dhian & Aim",
     description:
