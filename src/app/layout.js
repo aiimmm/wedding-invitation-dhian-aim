@@ -110,14 +110,20 @@ export const metadata = {
   applicationName: "Undangan Pernikahan Dhian & Aim",
   category: "wedding invitation",
   referrer: "origin-when-cross-origin",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#0a0a0a" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
-  ],
   formatDetection: {
     email: false,
     telephone: false,
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+  ],
 };
 
 export default function RootLayout({ children }) {
