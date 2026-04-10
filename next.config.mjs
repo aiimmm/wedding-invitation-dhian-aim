@@ -9,6 +9,7 @@ const nextConfig = {
     "aim-dhian-invitation.vercel.app",
     "dhian-aim-wi-api.aiimmm.net",
     "wedding.aiimmm.net",
+    "dhiiann.aiimmm.net",
     "aiimmm.net",
   ],
 };
