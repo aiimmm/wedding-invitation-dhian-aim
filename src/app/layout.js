@@ -56,7 +56,7 @@ export const metadata = {
     siteName: "Pernikahan Dhian & Aim",
     title: "Undangan Pernikahan Dhian & Aim",
     description:
-      "Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan mendoakan pernikahan kami. Tanpa kehadiran dan doa restu Anda, momen bahagia ini terasa kurang sempurna.",
+      "Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir serta memberikan doa restu atas pernikahan kami agar menjadi momen yang penuh kebahagiaan.",
     images: [
       {
         url: "/images/og-default.png",
@@ -73,7 +73,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Undangan Pernikahan Dhian & Aim",
     description:
-      "Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan mendoakan pernikahan kami. Tanpa kehadiran dan doa restu Anda, momen bahagia ini terasa kurang sempurna.",
+      "Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir serta memberikan doa restu atas pernikahan kami agar menjadi momen yang penuh kebahagiaan.",
     images: ["/images/og-default.png"],
   },
 
