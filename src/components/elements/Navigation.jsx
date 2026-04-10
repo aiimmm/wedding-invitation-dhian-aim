@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import {
   CalendarDaysIcon,
   ClockIcon,
@@ -10,7 +11,6 @@ import {
   VolumeXIcon,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { BlurFade } from "../ui/blur-fade";
 import { Button } from "../ui/button";
 import { Dock, DockIcon } from "../ui/dock";
 import { Separator } from "../ui/separator";
@@ -62,17 +62,14 @@ export default function Navigation({ isPlaying, onToggleAudio }) {
   };
 
   return (
-    <BlurFade
-      delay={0.4}
-      inView
-      direction="up"
+    <motion.div
       className="flex gap-2 fixed bottom-4 left-1/2 -translate-x-1/2 z-50"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <Dock
-        className={cn(
-          "rounded-full",
-          "dark:bg-background transform-gpu dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:[border:1px_solid_rgba(255,255,255,.1)]",
-        )}
+        className={cn("rounded-full bg-background/10 backdrop-blur-lg")}
         direction="middle"
       >
         {DATA.navItems.map((item, index) => {
@@ -80,66 +77,53 @@ export default function Navigation({ isPlaying, onToggleAudio }) {
           const isActive = isActiveSection === item.id;
 
           return (
-            <BlurFade
-              key={item.label}
-              delay={0.5 + index * 0.05}
-              inView
-              direction="up"
-            >
-              <DockIcon>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => scrollToSection(item.id)}
-                      className={cn(
-                        "size-10 rounded-full",
-                        isActive && "bg-primary text-primary-foreground",
-                      )}
-                    >
-                      <Icon className="size-4" />
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    <p>{item.label}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </DockIcon>
-            </BlurFade>
+            <DockIcon key={item.label}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={() => scrollToSection(item.id)}
+                    className={cn(
+                      "size-10 rounded-full",
+                      isActive && "bg-primary text-primary-foreground",
+                    )}
+                  >
+                    <Icon className="size-4" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{item.label}</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
           );
         })}
 
         <Separator orientation="vertical" className="h-full" />
 
-        <BlurFade
-          delay={0.5 + DATA.navItems.length * 0.05}
-          inView
-          direction="up"
-        >
-          <DockIcon>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Button
-                  onClick={onToggleAudio}
-                  variant="ghost"
-                  size="icon"
-                  className="animate-pulse size-10"
-                >
-                  {isPlaying ? (
-                    <Volume2Icon className="size-4" />
-                  ) : (
-                    <VolumeXIcon className="size-4" />
-                  )}
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{isPlaying ? "Mute" : "Unmute"}</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
-        </BlurFade>
+        <DockIcon>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                onClick={onToggleAudio}
+                variant="ghost"
+                size="icon"
+                className="animate-pulse size-10"
+              >
+                {isPlaying ? (
+                  <Volume2Icon className="size-4" />
+                ) : (
+                  <VolumeXIcon className="size-4" />
+                )}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{isPlaying ? "Mute" : "Unmute"}</p>
+            </TooltipContent>
+          </Tooltip>
+        </DockIcon>
       </Dock>
-    </BlurFade>
+    </motion.div>
   );
 }
